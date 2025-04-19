@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anji Electrical Technician</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #28a745;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    
+      background-color: #f9f9f9;
+    }
+    
+    /* Navigation */
+    .navbar {
+      transition: all 0.3s;
+    }
+    
+    .navbar.scrolled {
+      background-color: var(--dark-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s;
+    }
+    
+    .nav-link:hover {
+      color: var(--secondary-color) !important;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/img.jpg');
+      background-size:contain;
+      background-position: center;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero .lead {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    
+    /* Services Section */
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    .service-description {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .service-features {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .service-features li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .service-features li:before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--secondary-color);
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Gallery Section */
+    .gallery-img {
+      border-radius: 8px;
+      transition: all 0.3s;
+      margin-bottom: 20px;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Video Section */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+     /* Contact Section */
+     .contact-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    
+    .contact-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    .contact-item {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .contact-text {
+      flex: 1;
+    }
+    
+    .contact-text a {
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .contact-text a:hover {
+      color: var(--primary-color);
+    }
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 30px 0;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    .developer-credit {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+    
+    .developer-credit a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    
+    .developer-credit a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 75px 0;
+        
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero .lead {
+        font-size: 1.2rem;
+      }
+      
+      .service-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Anji</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero d-flex align-items-center">
+    <div class="container text-center">
+      <h1><span class="d-block mb-2">Hi, I am</span>Anji</h1>
+      <p class="lead mb-4">Professional Electrical & Plumbing Technician</p>
+      <a href="#services" class="btn btn-success btn-lg px-4 me-2">
+        <i class="fas fa-bolt me-2"></i>Our Services
+      </a>
+      <a href="#contact" class="btn btn-outline-light btn-lg px-4">
+        <i class="fas fa-phone me-2"></i>Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Services</h2>
+      <div class="row g-4">
+        <!-- House Wiring Service -->
+        <div class="col-md-6">
+          <div class="service-card">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-bolt text-primary me-3" style="font-size: 2rem;"></i>
+              <h3 class="service-title mb-0">House Wiring</h3>
+            </div>
+            <p class="service-description">We set up your new electrical system with the latest technology and safety standards.</p>
+            <ul class="service-features">
+              <li>Replace old wiring with advanced systems</li>
+              <li>Work based on your design and plans</li>
+              <li>100% reliable and certified work</li>
+              <li>Energy-efficient solutions</li>
+              <li>Emergency repair services</li>
+            </ul>
+           
+          </div>
+        </div>
+        
+        <!-- Plumbing Work Service -->
+        <div class="col-md-6">
+          <div class="service-card">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-faucet text-primary me-3" style="font-size: 2rem;"></i>
+              <h3 class="service-title mb-0">Plumbing Work</h3>
+            </div>
+            <p class="service-description">Easy water access throughout your home with professional plumbing solutions.</p>
+            <ul class="service-features">
+              <li>Plumbing support for existing houses</li>
+              <li>Work based on your design and plans</li>
+              <li>Leak detection and repair</li>
+              <li>Water heater installation</li>
+              <li>Drain cleaning services</li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Work Gallery</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4">
+          <img src="img/1.jpg" class="img-fluid gallery-img" alt="Electrical Work">
+        </div>
+        <div class="col-6 col-md-4">
+          <img src="img/2.jpg" class="img-fluid gallery-img" alt="Plumbing Work">
+        </div>
+        <div class="col-6 col-md-4">
+          <img src="img/4.jpg" class="img-fluid gallery-img" alt="House Wiring">
+        </div>
+        <div class="col-6 col-md-4">
+          <img src="img/5.jpg" class="img-fluid gallery-img" alt="Bathroom Plumbing">
+        </div>
+        <div class="col-6 col-md-4">
+          <img src="img/9.jpg" class="img-fluid gallery-img" alt="Kitchen Plumbing">
+        </div>
+        <div class="col-6 col-md-4">
+          <img src="img/6.jpg" class="img-fluid gallery-img" alt="Electrical Panel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="video-container">
+        <video controls autoplay muted loop>
+          <source src="img/7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Contact Me</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="contact-box">
+            <h3 class="contact-title">Get In Touch</h3>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Phone</h5>
+                <a href="tel:+7396946911">+91 7396946911</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Instagram</h5>
+                <a href="https://www.instagram.com/vemuanji?igsh=a2w0eG94cTY1MXJ4" target="_blank">@VemuAnji</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-facebook-f"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Facebook</h5>
+                <a href="https://www.facebook.com/profile.php?id=100008011908333" target="_blank"> Anji yadav</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Location</h5>
+                <p>Kalwacharla,Ramagiri, centenary colony 505212 ,peddapalli</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="mb-3">Anji Electrical & Plumbing</h5>
+          <p>Professional services for all your home electrical and plumbing needs.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="social-icons mb-3">
+            <a href="https://www.facebook.com/profile.php?id=100008011908333"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/vemuanji?igsh=a2w0eG94cTY1MXJ4"><i class="fab fa-instagram"></i></a>
+            <a href="7396946911"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          &copy; 2025 Anji - Electrical Technician. All rights reserved.
+          <p class="developer-credit">Built by <a href="https://uyyalasrikanth.netlify.app" target="_blank">uyyalasrikanth.netlify.app</a></p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

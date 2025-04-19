@@ -1,0 +1,169 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Optional: Make the background fixed */
+    height: 150vh; /* Full viewport height */
+    color: white; /* Set text color for contrast */
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Place it behind content */
+   
+}
+   .header{
+  
+    padding: 30px 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+   }
+  .navs{
+    margin-top: 0px;
+    width:auto;
+    height: 40px;
+    display:flex;
+    margin-bottom: 100px;
+}
+
+  .navs ul{
+   justify-content: flex-end;
+   color: aliceblue;
+  }
+   .navs ul li{
+    color: aliceblue;
+    margin: 0 15px;
+    display:inline;
+}
+.navs ul li a{
+    color: aliceblue;
+    margin: 0 15px;
+    display:inline;
+}
+.intro{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('img/img.jpg') no-repeat center center fixed;
+    background-size: cover; /* Make the image cover the entire background */
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    text-align:justify;
+    width: 100x;
+    height: 100vh;
+    
+    
+}
+.intro-text {
+    width: 100%;
+    max-width: 800px; /* Limit max width of the text block */
+    margin-left: 120px;
+}
+
+.intro h1 {
+    color: yellow;
+    font-size: 48px;
+    margin-bottom: 5px; /* Space below the heading */
+}
+
+.intro-text p {
+    font-size: 20px;
+    margin: 10px 0 20px;
+}
+
+.intro button {
+    padding: 10px 20px;
+    background-color: #f0a500;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.intro button:hover {
+    background-color: #d18700;
+}
+.works {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 100px;
+    flex-wrap: wrap-reverse;
+    margin-top: 90px;
+}
+
+.works img {
+    width: 100%;
+    max-width: 350px; /* Limit the maximum size of images */
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.works img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+.video video {
+    max-width: 500px;
+    height: auto;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.two{
+   display: flex;
+   
+   justify-content: space-between;
+}
+.about,.contact{
+    background-color:#f0a500;
+   width: 600px;
+   height: 250px;
+    gap: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.Multi{
+   
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+.box1,.box2{
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+    margin-top: 10px;
+    border-radius: 50px;
+    background-color: #f0a500;
+    padding: 7px;
+    
+
+}
+.box2:hover{
+    transform: scale(1.1); /* Zoom the div */
+    background-color: #d18700; /* Change background color */
+}
+.box1:hover:hover{
+    transform: scale(1.1); /* Smooth zoom effect */
+    background-color: #d18700; /* Change background color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+html{
+    scroll-behavior: smooth;
+}
